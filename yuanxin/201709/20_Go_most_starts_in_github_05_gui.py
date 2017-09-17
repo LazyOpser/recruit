@@ -4,7 +4,7 @@
 """
 @author: yuanxin
 contact:
-@file: 2017/9/17-most_starts_in_github.py
+@file: 2017/9/17-Go_most_starts_in_github.py
 @time: 2017/9/17 
 """
 
@@ -17,8 +17,8 @@ import pygal
 from pygal.style import LightColorizedStyle as LCS, LightStyle as LS
 import time
 
-# Make an API call and store the response.
-url = 'https://api.github.com/search/repositories?q=language:python&sort=stars'
+# 将返回值存储在变量中.
+url = 'https://api.github.com/search/repositories?q=language:go&sort=stars'
 req = requests.get(url)
 print("Request Code: ", req.status_code)
 
@@ -52,8 +52,8 @@ chart = pygal.Bar(my_config, style=my_style)
 
 # chart = pygal.Bar(style=my_style, x_label_rotation=45 )
 # chart = pygal.Bar(style=my_style, x_label_rotation=45, show_legend=False)
-chart.title = 'GitHub 上最受欢迎的 Python 项目'
+chart.title = 'GitHub 上最受欢迎的 Go 语言项目'
 chart.x_labels = names
 
 chart.add('', stars)
-chart.render_to_file('python_repos_01.svg')
+chart.render_to_file('GO_repos_01.svg')
