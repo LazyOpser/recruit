@@ -10,7 +10,8 @@ export GOBIN="$CURRENT_DIR/bin"
 #指定并整理当前的源码路径
 gofmt -w src
 
-go install test_hello
+go install github.com/golang/example/
+
 
 export GOPATH="$OLD_GO_PATH"
 export GOBIN="$OLD_GO_BIN"
